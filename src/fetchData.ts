@@ -6,4 +6,22 @@
  */
 
 // 請在下方寫下你的程式碼
+type ApiResponse = {
+  userId: number
+  id: number
+  title: string
+  completed: boolean
+}
 
+export const fetchData = async (url: string): Promise<ApiResponse> => {
+  try {
+    const response = await fetch(url)
+
+    if (!response.ok) throw new Error(`取得資料失敗 Status:${response.status}`)
+
+    const data = response.json()
+    return data
+  } catch (error) {
+    throw error
+  }
+}

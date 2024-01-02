@@ -10,6 +10,21 @@
  * @param age - 一個需要被分類的年齡
  * @returns - 回傳年齡的分類結果
  */
+
+enum Age {
+  Child = 'Child',
+  Teenager = 'Teenager',
+  Adult = 'Adult',
+  Senior = 'Senior',
+}
+
 export function classifyAge(age: number): string {
-    // 請在此處寫下你的程式碼
+  // 請在此處寫下你的程式碼
+  if (age <= 12) return Age.Child
+
+  if (age >= 13 && age <= 17) return Age.Teenager
+
+  if (age >= 18 && age <= 65) return Age.Adult
+
+  return Age.Senior
 }
