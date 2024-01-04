@@ -8,7 +8,7 @@
  * 輸出: [[2, 4], [6, 8], [10, 12]]
  */
 
-type Arr = [number, number][]
+type Arr = number[][]
 
 export function processMultiArray(arr: Arr) {
   // 在此實現函式
